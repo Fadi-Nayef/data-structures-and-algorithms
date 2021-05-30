@@ -107,8 +107,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let isCapitalized = str.match(/\b[A-Z](\w)*/g)
-  return isCapitalized;
+  const localArray = [];
+  let matched = str.match(/\b[A-Z].*?\b/g);
+  
+  matched.map(item => {
+    localArray.push(item);
+  });
+  return localArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
